@@ -35,6 +35,10 @@ map n     :tabnew<CR>
 map q     :q<CR>
 map w     :w<CR>
 
+" Fzf (improved fuzzy search"
+Plugin 'junegunn/fzf'
+map <C-f> :FZF<CR>
+
 " Autocomplete
 if has('nvim')
     Plugin 'neoclide/coc.nvim'
@@ -66,14 +70,11 @@ else
     Plugin 'ervandew/supertab'
 endif
 
-" Tags panel
-Plugin 'majutsushi/tagbar'
-map <C-t> :TagbarToggle<CR>
-
 " Git support
 Plugin 'tpope/vim-fugitive'
 map <C-s> :Gstatus<CR>
 map <C-c> :Gcommit %<CR>
+map <C-p> :Git push<CR>
 
 " File tree
 Plugin 'scrooloose/nerdtree'
