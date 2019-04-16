@@ -86,6 +86,35 @@ let NERDTreeQuitOnOpen=1
 
 " Improved status bar
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline_theme='luna'
+
+" Prettier
+Plugin 'mitermayer/vim-prettier'
+map o :Prettier<CR>
+
+" PHP cs fixer
+Plugin 'stephpy/vim-php-cs-fixer'
+map l :call PhpCsFixerFixFile()<CR>
+
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+autocmd BufWritePost *.tsx silent! :Prettier
+autocmd BufWritePost *.ts silent! :Prettier
+autocmd BufWritePost *.jsx silent! :Prettier
+autocmd BufWritePost *.js silent! :Prettier
+autocmd BufWritePost *.json silent! :Prettier
+
+" Workspaces
+Plugin 'thaerkh/vim-workspace'
+map <C-k> :ToggleWorkspace<CR>
+let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+let g:workspace_undodir = $HOME . '/.vim/undodir'
+
+" Improved syntax highlight
+Plugin 'leafgarland/typescript-vim'
+autocmd BufRead,BufNewFile *.tsx setfiletype typescript
 
 " End
 call vundle#end()
