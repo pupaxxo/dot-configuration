@@ -9,6 +9,10 @@
 * vim-airline 
 * tagbar
 * fzf
+* vim-workspaces
+* php-cs-fixer plugin
+* prettier-plugin
+* vim-fugitive
 
 ## Tmux
 * Powerline support
@@ -55,6 +59,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 * *n* : open new tab
 * *|* : split verically
 * *-* : split horizontally
+* *o* : run prettier
+* *l* : run php-cs-fixer
 * *Ctrl-f* : fuzzy search
 * *Ctrl-p* : git push
 * *Ctrl-s* : interactive git status
