@@ -8,6 +8,7 @@
 * nerdtree (with git support)
 * vim-airline 
 * tagbar
+* fzf
 
 ## Tmux
 * Powerline support
@@ -54,6 +55,10 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 * *n* : open new tab
 * *|* : split verically
 * *-* : split horizontally
+* *Ctrl-f* : fuzzy search
+* *Ctrl-p* : git push
+* *Ctrl-s* : interactive git status
+* *Ctrl-c* : git commit
 
 ### Tmux
 * *Ctrl-z* : toggle zoom (default on tmux)
