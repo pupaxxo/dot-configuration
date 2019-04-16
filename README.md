@@ -2,7 +2,7 @@
 
 ## Installed plugins
 
-### Vim
+### Vim
 * Vundle 
 * COC autocomplete (or supertab on vim)
 * nerdtree (with git support)
@@ -66,7 +66,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 * *Ctrl-s* : interactive git status
 * *Ctrl-c* : git commit
 
-### Tmux
+### Tmux
 * *Ctrl-z* : toggle zoom (default on tmux)
 * *"* or *|* : split vertically
 * *%* or *-* : split horizontally
