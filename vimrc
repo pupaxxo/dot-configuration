@@ -27,8 +27,13 @@ set backspace=indent,eol,start
 set scrolloff=5
 set signcolumn=yes
 set updatetime=300
-set cmdheight=2
 set shortmess+=c
+set clipboard=unnamed
+map <Bar> <C-W>v<C-W><Right>
+map -     <C-W>s<C-W><Down>
+map n     :tabnew<CR>
+map q     :q<CR>
+map w     :w<CR>
 
 " Autocomplete
 if has('nvim')
@@ -61,6 +66,15 @@ else
     Plugin 'ervandew/supertab'
 endif
 
+" Tags panel
+Plugin 'majutsushi/tagbar'
+map <C-t> :TagbarToggle<CR>
+
+" Git support
+Plugin 'tpope/vim-fugitive'
+map <C-s> :Gstatus<CR>
+map <C-c> :Gcommit %<CR>
+
 " File tree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -68,10 +82,6 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 50
 let NERDTreeQuitOnOpen=1
-
-" Split
-map <C-s> :split
-map <C-h> :vsplit
 
 " Improved status bar
 Plugin 'vim-airline/vim-airline'
