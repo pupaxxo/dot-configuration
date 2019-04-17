@@ -22,6 +22,7 @@
 * Run `brew install python3 reattach-to-user-namespace; pip3 install powerline-status powerline-mem-segment`
 * Run `ln -s $(pwd)/nvim-configuration ~/.config/nvim`
 * Run `ln -s $(pwd)/powerline-configuration ~/.config/powerline`
+* Run `ln -s $(pwd)/fish-configuration ~/.config/fish`
 * Run `ln -s $(pwd)/tmux.conf ~/.tmux.conf`
 * Run `ln -s $(pwd)/vimrc ~/.vimrc`
 * You'll need Vundle, check below how to install vundle
