@@ -14,7 +14,7 @@
 * prettier-plugin
 * vim-fugitive
 
-## Tmux
+### Tmux
 * Powerline support
 
 ## How to install
@@ -23,6 +23,7 @@
 * Run `ln -s $(pwd)/nvim-configuration ~/.config/nvim`
 * Run `ln -s $(pwd)/powerline-configuration ~/.config/powerline`
 * Run `ln -s $(pwd)/fish-configuration ~/.config/fish`
+* Run `ln -s $(pwd)/omf-configuration ~/.config/omf`
 * Run `ln -s $(pwd)/tmux.conf ~/.tmux.conf`
 * Run `ln -s $(pwd)/vimrc ~/.vimrc`
 * You'll need Vundle, check below how to install vundle
