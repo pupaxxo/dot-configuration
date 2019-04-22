@@ -34,6 +34,8 @@ map -     <C-W>s<C-W><Down>
 map n     :tabnew<CR>
 map q     :q<CR>
 map w     :w<CR>
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>
 
 " Fzf (improved fuzzy search"
 Plugin 'junegunn/fzf'
