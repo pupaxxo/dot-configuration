@@ -175,9 +175,18 @@ map <C-s> :Gstatus<CR>
 map <C-c> :Gcommit %<CR>
 map <C-p> :Git push<CR>
 
+" Indent lines
+" let g:indent_guides_enable_on_vim_startup = 1
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Improved comments
+Plugin 'tpope/vim-commentary'
+
 " File tree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 50
