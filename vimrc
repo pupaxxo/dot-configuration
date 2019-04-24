@@ -33,6 +33,7 @@ map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
 map n     :tabnew<CR>
 map q     :q<CR>
+map c     :bd<CR>
 map w     :w<CR>
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <
