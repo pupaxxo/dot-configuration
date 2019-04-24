@@ -45,6 +45,14 @@ inoremap <S-Tab> <C-t>
 Plugin 'junegunn/fzf'
 map <C-f> :FZF<CR>
 
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "type": "style" }
+
 " Autocomplete
 if has('nvim')
     Plugin 'neoclide/coc.nvim'
