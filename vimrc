@@ -48,6 +48,14 @@ inoremap <S-Tab> <C-t>
 Plugin 'junegunn/fzf'
 map <C-f> :FZF<CR>
 
+" SpamAssasins syntax highlight
+Plugin 'vim-scripts/SpamAssassin-syntax'
+autocmd BufNewFile,BufRead *.cf setlocal filetype=spamassassin
+
+" Yara syntax highlight
+Plugin 's3rvac/vim-syntax-yara'
+autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
+
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
