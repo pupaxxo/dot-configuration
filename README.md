@@ -28,6 +28,7 @@
 * Run `ln -s $(pwd)/vimrc ~/.vimrc`
 * You'll need Vundle, check below how to install vundle
 * Now install required plugins, run `vim +PluginInstall +qall`
+* After installing plugin execute `cd ~/.vim/bundle/vimproc.vim && make`
 
 ### Additional steps if you plan to use nvim
 

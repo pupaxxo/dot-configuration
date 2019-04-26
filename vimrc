@@ -29,12 +29,14 @@ set signcolumn=yes
 set updatetime=300
 set shortmess+=c
 set clipboard=unnamed
+" Split (- and |)
 map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
-map n     :tabnew<CR>
+" Quit, Close, Write
 map q     :q<CR>
 map c     :bd<CR>
 map w     :w<CR>
+" Tab and Shift-Tab 
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <
 inoremap <S-Tab> <C-d>
@@ -46,9 +48,6 @@ inoremap <S-Tab> <C-t>
 Plugin 'junegunn/fzf'
 map <C-f> :FZF<CR>
 
-" Typescript
-Plugin 'Shougo/vimproc.vim'
-
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
@@ -56,6 +55,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_aggregate_errors = 1
+
+" vim proc
+Plugin 'Shougo/vimproc.vim'
+" execute `cd ~/.vim/bundle/vimproc.vim && make` after install
+
+" Typescript
+" Plugin 'Quramy/tsuquyomi'
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 
 " Autocomplete
 if has('nvim')
