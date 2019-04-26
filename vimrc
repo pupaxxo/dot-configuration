@@ -17,8 +17,8 @@ set hlsearch
 set incsearch
 hi  Search ctermfg=black ctermbg=brown
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set showmode
 set nu
 set cursorline
@@ -42,9 +42,12 @@ nnoremap <Tab> >>
 vnoremap <Tab> >
 inoremap <S-Tab> <C-t>
 
-" Fzf (improved fuzzy search"
+" Fzf (improved fuzzy search)"
 Plugin 'junegunn/fzf'
 map <C-f> :FZF<CR>
+
+" Typescript
+Plugin 'Shougo/vimproc.vim'
 
 " Syntax checker
 Plugin 'scrooloose/syntastic'
