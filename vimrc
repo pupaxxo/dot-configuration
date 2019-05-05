@@ -195,6 +195,7 @@ Plug 'tpope/vim-fugitive'
 map <C-s> :Gstatus<CR>
 map <C-c> :Gcommit %<CR>
 map <C-p> :Git push<CR>
+Plug 'airblade/vim-gitgutter'
 
 " Indent lines
 " let g:indent_guides_enable_on_vim_startup = 1
