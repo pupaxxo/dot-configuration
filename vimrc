@@ -32,6 +32,8 @@ set signcolumn=yes
 set updatetime=300
 set shortmess+=c
 set clipboard=unnamed
+set lazyredraw
+set ruler
 " Split (- and |)
 map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
