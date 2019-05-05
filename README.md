@@ -26,13 +26,9 @@
 * Run `ln -s $(pwd)/omf-configuration ~/.config/omf`
 * Run `ln -s $(pwd)/tmux.conf ~/.tmux.conf`
 * Run `ln -s $(pwd)/vimrc ~/.vimrc`
-* You'll need Vundle, check below how to install vundle
-* Now install required plugins, run `vim +PluginInstall +qall`
-* After installing plugin execute `cd ~/.vim/bundle/vimproc.vim && make`
 
 ### Additional steps if you plan to use nvim
 
-* Open nvim and run `:call coc#util#install()`
 * Run `ln -s $(which nvim) /usr/local/bin/vim`
 
 ### Language auto-complete services
@@ -45,14 +41,6 @@
 * For Java support run `:CocInstall coc-java`
 * For YAML support run `:CocInstall coc-yaml`
 * For Python support run `:CocInstall coc-python`
-
-### How to install Vundle
-
-Run this command:
-
-```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
 
 ## Shortcuts
 

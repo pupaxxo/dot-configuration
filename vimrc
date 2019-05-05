@@ -1,9 +1,12 @@
-" Setup Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" Automaticallt install vim-plug (if needed)
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Setup vim-plug
+call plug#begin('~/.vim/plugged')
 
 " General settings
 set number
@@ -45,19 +48,19 @@ vnoremap <Tab> >
 inoremap <S-Tab> <C-t>
 
 " Fzf (improved fuzzy search)"
-Plugin 'junegunn/fzf'
+Plug 'junegunn/fzf'
 map <C-f> :FZF<CR>
 
 " SpamAssasins syntax highlight
-Plugin 'vim-scripts/SpamAssassin-syntax'
+Plug 'vim-scripts/SpamAssassin-syntax'
 autocmd BufNewFile,BufRead *.cf setlocal filetype=spamassassin
 
 " Yara syntax highlight
-Plugin 's3rvac/vim-syntax-yara'
+Plug 's3rvac/vim-syntax-yara'
 autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
 
 " Syntax checker
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -66,18 +69,16 @@ let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_aggregate_errors = 1
 
 " vim proc
-Plugin 'Shougo/vimproc.vim'
-" execute `cd ~/.vim/bundle/vimproc.vim && make` after install
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " Typescript
-" Plugin 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 " let g:tsuquyomi_disable_quickfix = 1
 " let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 
 " Autocomplete
 if has('nvim')
-    Plugin 'neoclide/coc.nvim'
-    " Execute after coc.nvim install :call coc#util#install()
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
     
     " Use tab for trigger completion with characters ahead and navigate.
     " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -186,35 +187,35 @@ if has('nvim')
     " Resume latest coc list
     nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 else
-    Plugin 'ervandew/supertab'
+    Plug 'ervandew/supertab'
 endif
 
 " Git support
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 map <C-s> :Gstatus<CR>
 map <C-c> :Gcommit %<CR>
 map <C-p> :Git push<CR>
 
 " Indent lines
 " let g:indent_guides_enable_on_vim_startup = 1
-Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Improved comments
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " File tree
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 50
 let NERDTreeQuitOnOpen=1
 
 " Improved status bar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'jsformatter'
 let g:airline_powerline_fonts = 1
@@ -222,11 +223,11 @@ let g:airline_theme='wombat'
 let g:airline_skip_empty_sections = 1
 
 " Prettier
-Plugin 'mitermayer/vim-prettier'
+Plug 'mitermayer/vim-prettier'
 map o :Prettier<CR>
 
 " PHP cs fixer
-Plugin 'stephpy/vim-php-cs-fixer'
+Plug 'stephpy/vim-php-cs-fixer'
 map l :call PhpCsFixerFixFile()<CR>
 
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
@@ -237,16 +238,15 @@ autocmd BufWritePost *.js silent! :Prettier
 autocmd BufWritePost *.json silent! :Prettier
 
 " Workspaces
-Plugin 'thaerkh/vim-workspace'
+Plug 'thaerkh/vim-workspace'
 map <C-k> :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir = $HOME . '/.vim/undodir'
 
 " Improved syntax highlight
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 autocmd BufRead,BufNewFile *.tsx setfiletype typescript
 
 " End
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
