@@ -246,9 +246,14 @@ map <C-k> :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir = $HOME . '/.vim/undodir'
 
-" Improved syntax highlight
+" Typescript syntax highlight
 Plug 'leafgarland/typescript-vim'
 autocmd BufRead,BufNewFile *.tsx setfiletype typescript
+autocmd BufRead,BufNewFile *.ts setfiletype typescript
+
+" Fish syntax highlight
+Plug 'dag/vim-fish'
+autocmd BufRead,BufNewFile *.fish setfiletype fish
 
 " End
 call plug#end()
