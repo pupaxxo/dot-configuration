@@ -19,13 +19,32 @@
 
 ## How to install
 
-* Run `brew install python3 reattach-to-user-namespace; pip3 install powerline-status powerline-mem-segment`
-* Run `ln -s $(pwd)/nvim-configuration ~/.config/nvim`
-* Run `ln -s $(pwd)/powerline-configuration ~/.config/powerline`
-* Run `ln -s $(pwd)/fish-configuration ~/.config/fish`
-* Run `ln -s $(pwd)/omf-configuration ~/.config/omf`
-* Run `ln -s $(pwd)/tmux.conf ~/.tmux.conf`
-* Run `ln -s $(pwd)/vimrc ~/.vimrc`
+Run the following bash snippet
+
+```bash
+
+# Install needed packages on Linux
+if uname | grep -q Linux; then
+  sudo apt install fish tmux curl nodejs powerline
+fi
+
+# Install needed packages on macOS
+if uname | grep -q Darwin; then
+  brew install python3 reattach-to-user-namespace; pip3 install powerline-status powerline-mem-segment
+fi
+
+# Install needed configurations
+ln -s $(pwd)/nvim-configuration ~/.config/nvim
+ln -s $(pwd)/powerline-configuration ~/.config/powerline
+ln -s $(pwd)/fish-configuration ~/.config/fish
+ln -s $(pwd)/omf-configuration ~/.config/omf
+ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/vimrc ~/.vimrc
+
+# Install fish
+curl -L https://get.oh-my.fish | fish
+
+```
 
 ### Additional steps if you plan to use nvim
 
