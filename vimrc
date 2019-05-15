@@ -255,6 +255,9 @@ autocmd BufRead,BufNewFile *.ts setfiletype typescript
 Plug 'dag/vim-fish'
 autocmd BufRead,BufNewFile *.fish setfiletype fish
 
+" Twig syntax highlight
+Plug 'nelsyeung/twig.vim'
+
 " End
 call plug#end()
 
