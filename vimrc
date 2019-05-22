@@ -8,7 +8,10 @@ endif
 " Setup vim-plug
 call plug#begin('~/.vim/plugged')
 
+set termguicolors
+
 " General settings
+set nocompatible
 set number
 syntax on
 set ignorecase
@@ -18,7 +21,7 @@ set title
 set background=dark
 set hlsearch
 set incsearch
-hi  Search ctermfg=black ctermbg=brown
+" hi  Search ctermfg=black ctermbg=brown
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -34,6 +37,7 @@ set shortmess+=c
 set clipboard=unnamed
 set lazyredraw
 set ruler
+" colorscheme slate
 " Split (- and |)
 map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
@@ -215,6 +219,9 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize = 50
 let NERDTreeQuitOnOpen=1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+highlight! link NERDTreeFlags NERDTreeDir
 
 " Improved status bar
 Plug 'vim-airline/vim-airline'
@@ -246,9 +253,13 @@ map <C-k> :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir = $HOME . '/.vim/undodir'
 
+" PHP syntax highlight
+Plug 'StanAngeloff/php.vim'
+
 " Typescript syntax highlight
 Plug 'leafgarland/typescript-vim'
-autocmd BufRead,BufNewFile *.tsx setfiletype typescript
+Plug 'peitalin/vim-jsx-typescript'
+autocmd BufRead,BufNewFile *.tsx,*.jsx setfiletype typescript.tsx
 autocmd BufRead,BufNewFile *.ts setfiletype typescript
 
 " Fish syntax highlight
@@ -258,6 +269,28 @@ autocmd BufRead,BufNewFile *.fish setfiletype fish
 " Twig syntax highlight
 Plug 'nelsyeung/twig.vim'
 
+" Color scheme
+Plug 'joshdick/onedark.vim'
+Plug 'isobit/vim-darcula-colors'
+Plug 'chriskempson/base16-vim'
+
 " End
 call plug#end()
 
+" Colors
+" colorscheme darcula
+let base16colorspace=256
+colorscheme base16-default-dark
+
+" Blues
+" light blues
+hi xmlTagName guifg=#59ACE5
+hi xmlTag guifg=#59ACE5
+
+" dark blues
+hi xmlEndTag guifg=#2974a1
+hi jsxCloseString guifg=#2974a1
+hi htmlTag guifg=#2974a1
+hi htmlEndTag guifg=#2974a1
+hi htmlTagName guifg=#59ACE5
+hi jsxAttrib guifg=#1BD1C1
