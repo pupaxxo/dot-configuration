@@ -252,6 +252,7 @@ Plug 'thaerkh/vim-workspace'
 map <C-k> :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
 let g:workspace_undodir = $HOME . '/.vim/undodir'
+let g:workspace_autosave = 0
 
 " PHP syntax highlight
 Plug 'StanAngeloff/php.vim'
@@ -280,7 +281,7 @@ call plug#end()
 " Colors
 " colorscheme darcula
 let base16colorspace=256
-colorscheme base16-default-dark
+colorscheme base16-classic-dark
 
 " Blues
 " light blues
