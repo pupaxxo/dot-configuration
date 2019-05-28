@@ -45,6 +45,7 @@ map -     <C-W>s<C-W><Down>
 map q     :q<CR>
 map c     :bd<CR>
 map w     :w<CR>
+map <C-s> :w<CR>
 " Tab and Shift-Tab 
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <
@@ -262,6 +263,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 autocmd BufRead,BufNewFile *.tsx,*.jsx setfiletype typescript.tsx
 autocmd BufRead,BufNewFile *.ts setfiletype typescript
+
+" Add colors to HEX codes
+Plug 'chrisbra/Colorizer'
+map <silent> hc :call Colorizer#ColorToggle()<CR>
 
 " Fish syntax highlight
 Plug 'dag/vim-fish'
