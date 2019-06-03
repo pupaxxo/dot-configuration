@@ -235,7 +235,6 @@ let g:airline_skip_empty_sections = 1
 
 " Prettier
 Plug 'mitermayer/vim-prettier'
-map o :Prettier<CR>
 
 " PHP cs fixer
 Plug 'stephpy/vim-php-cs-fixer'
