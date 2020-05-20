@@ -43,7 +43,6 @@ map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
 " Quit, Close, Write
 map q     :q<CR>
-map c     :bd<CR>
 map w     :w<CR>
 map <C-s> :w<CR>
 " Tab and Shift-Tab 
