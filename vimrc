@@ -42,9 +42,9 @@ set ruler
 map <Bar> <C-W>v<C-W><Right>
 map -     <C-W>s<C-W><Down>
 " Quit, Close, Write
-map q     :q<CR>
-map w     :w<CR>
-map <C-s> :w<CR>
+" map q     :q<CR>
+" map w     :w<CR>
+" map <C-s> :w<CR>
 " Tab and Shift-Tab 
 nnoremap <S-Tab> <<
 vnoremap <S-Tab> <
@@ -84,7 +84,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " Autocomplete
 if has('nvim')
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     
     " Use tab for trigger completion with characters ahead and navigate.
     " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -274,8 +274,8 @@ autocmd BufRead,BufNewFile *.fish setfiletype fish
 Plug 'nelsyeung/twig.vim'
 
 " Color scheme
-Plug 'joshdick/onedark.vim'
-Plug 'isobit/vim-darcula-colors'
+" Plug 'joshdick/onedark.vim'
+" Plug 'isobit/vim-darcula-colors'
 Plug 'chriskempson/base16-vim'
 
 " End
